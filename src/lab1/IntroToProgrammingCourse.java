@@ -1,7 +1,5 @@
 package lab1;
 
-import javax.swing.JOptionPane;
-
 /**
  * Describe responsibilities here. NOTE: this class has NO PREREQUISITES! Do not
  * change this fact.
@@ -9,54 +7,61 @@ import javax.swing.JOptionPane;
  * @author your name goes here
  * @version 1.00
  */
-public class IntroToProgrammingCourse {
+public class IntroToProgrammingCourse extends ProgrammingCourse {
 
     private String courseName;
-    String courseNumber;
+    private String courseNumber;
     private double credits;
+    private String prerequisites;
 
-    public IntroToProgrammingCourse(String courseName, String courseNumber) {
+    public IntroToProgrammingCourse(String courseName, String courseNumber, double credits) {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
+        this.setCredits(credits);
     }
 
+    @Override
     public String getCourseNumber() {
         return courseNumber;
     }
 
-    public final void setCourseNumber(String courseNumber) {
-        if (courseNumber == null || courseNumber.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
-            System.exit(0);
-        }
+    @Override
+    public void setCourseNumber(String courseNumber) {
+        super.setCourseNumberCheck(courseNumber);
         this.courseNumber = courseNumber;
     }
 
+    @Override
     public double getCredits() {
         return credits;
     }
 
+    @Override
     public void setCredits(double credits) {
-        if (credits < 0.5 || credits > 4.0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 4.0");
-            System.exit(0);
-        }
+        super.setCreditsCheck(credits);
         this.credits = credits;
     }
 
+    @Override
     public String getCourseName() {
         return courseName;
     }
 
-    public final void setCourseName(String courseName) {
-        if (courseName == null || courseName.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null of empty string");
-            System.exit(0);
-        }
+    @Override
+    public void setCourseName(String courseName) {
+        super.setCourseNameCheck(courseName);
         this.courseName = courseName;
+    }
+    
+    @Override
+    public String getPrerequisites() {
+        return prerequisites;
+    }
+
+    @Override
+    public void setPrerequisites(String prerequisites) {
+        super.setPrequisitesCheck(prerequisites);
+        this.prerequisites = prerequisites;
     }
 
 }
