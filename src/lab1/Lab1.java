@@ -24,7 +24,7 @@ package lab1;
  *  7)  All the instance variables in the subclasses were made private.
  * 
  * For the design, I do not see a great benefit to having 3 separate classes and using inheritance.
- * Instead, I would have made one class and make one of the instance values the class name.
+ * Instead, I would have created one class and made one of the instance values the course name.
  * There is just too much repetition here.
  * 
  * Regarding the Liskov Substitution principle, it is good practice to declare the variable
